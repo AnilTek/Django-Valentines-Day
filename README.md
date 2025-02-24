@@ -47,3 +47,7 @@ Log in with the superuser credentials to access the host/admin panel.
 
 ---
 ![Image](https://github.com/user-attachments/assets/5cacf47b-3c63-42fa-b280-0e823996384e)
+
+![Image](https://github.com/user-attachments/assets/1de58185-3e2f-4d46-b47e-bd9ec5ff5cc9)
+
+![Image](https://github.com/user-attachments/assets/38d0b4a5-2bb6-44f1-99f0-c9300cb689ed)
