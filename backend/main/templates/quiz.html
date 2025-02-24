@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="quiz-container">
+    <h2 class="quiz-title">{{ quiz.title }}</h2>
+    <p class="quiz-description">{{ quiz.description }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {% for question in questions %}
+            <div class="quiz-question-container">
+                <div class="quiz-question">
+                    {{ question.text }}
+                </div>
+                
+                <div class="quiz-options">
+                    {% for option in question.options %}
+                        <label>
+                            <input type="radio" name="question_{{ forloop.parentloop.counter }}" value="{{ forloop.counter0 }}" required>
+                            {{ option }}
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="quiz-submit-container">
+            <button type="submit" class="quiz-submit">Gonder</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
+{% endblock content %}

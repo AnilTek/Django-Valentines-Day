@@ -1,0 +1,1287 @@
+@font-face {
+    font-family: 'ArcadeClassic';
+    src: url('../fonts/ARCADECLASSIC.TTF') format('truetype');
+}
+
+.pixel-text {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 3rem;
+    color: #ff3366;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+body {
+    font-family: 'Arial, sans-serif';
+    background: url('../images/b2.jpg') center fixed;
+    margin: 0;
+    background-size: cover;
+}
+
+
+.password-box {
+    
+    background-color: rgba(212,130,240,255);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.password-input {
+    font-family: 'ArcadeClassic', sans-serif;
+    border: 2px solid rgba(134,57,185,255);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.password-input:focus {
+    border-color: #ff6699;
+    box-shadow: 0 0 8px rgba(255, 102, 153, 0.5);
+}
+
+.submit-btn {
+    font-family: 'ArcadeClassic', sans-serif;
+    background-color: rgba(134,57,185,255);
+    border: none;
+    padding: 20px 34px;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    font-family: 'ArcadeClassic', sans-serif;
+    background-color: white;
+    color:rgba(134,57,185,255);;
+}
+
+
+
+.custom-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-list {
+    display: flex;
+    align-items: center;  /* Menü metinlerini ve resimleri aynı hizada tutar */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(134,80,236,255);
+}
+
+.profile-img-devil {
+    
+    background-color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.profile-img-devil:hover {
+    content: url("/static/images/devil_icon.png");
+    background-color: black;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.gold-amount {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item-link {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+}
+
+.nav-item-link:hover {
+    color: #ff6699;
+}
+
+/* Sağdaki profil resminin hizasını düzgünleştirme */
+.navbar-list li {
+    display: flex;
+    align-items: center;
+}
+
+/* COIN-FLIP SAYFASI */
+body {
+    padding-top: 80px; /* Navbar'ın üstüne binen elemanları önlemek için */
+}
+.coinflip-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.decide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.decide-inputs-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+
+.decide-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.decide-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #424ae0;
+    margin-bottom: 5px;
+}
+
+.decide-input {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgba(134,57,185,0);
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+
+.decide-input:focus {
+    border-color: rgb(251,203,45)
+}
+
+.decide-coin {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    margin: 0 20px;
+}
+
+
+.coin-face img {
+    width: 145px;
+}
+.heads-animation {
+    animation: spin-heads 3s forwards;
+}
+
+.tails-animation {
+    animation: spin-tails 3s forwards;
+}
+
+@keyframes spin-heads {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(2160deg);
+    }
+}
+
+@keyframes spin-tails {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(1980deg);
+    }
+}
+.decide-button-section {
+    margin-top: 20px;
+}
+
+.decide-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    background-color: rgba(134,57,185,255);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.decide-button:hover {
+    background-color: black;
+    color : rgba(134,57,185,255);
+}
+
+.decide-result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 8px;
+    color: #424ae0;
+}
+/* COIN-FLIP SAYFASI
+
+
+
+
+
+
+
+/* BACCARAT GAME */
+.baccarat-header{
+    margin-top: 5%;
+}
+.baccarat-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 10%;
+}
+
+.baccarat-player-section, .baccarat-banker-section {
+    width: 40%;
+    text-align: center;
+}
+
+.baccarat-cards {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.baccarat-card {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Butonlar ortada ve alt kısımda */
+.baccarat-bet-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.baccarat-bet-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgba(134,57,185,255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.baccarat-bet-button:hover {
+    background-color: white;
+    color: rgba(134,57,185,255);
+}
+
+/* Bahis girişi ortada olacak şekilde */
+.baccarat-bet-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.baccarat-bet-section input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 200px;
+    background-color: rgba(134,57,185,0) ;
+    color: black;
+}
+
+/* Sonuç mesajı */
+.baccarat-result-section {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* BACCARAT GAME */
+
+/* HELP */
+.help-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.help-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.help-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.help-text {
+    font-size: 1.2rem;
+    color: rgba(134,80,236,255);
+    line-height: 1.8;
+}
+
+.help-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
+
+/* HELP */
+
+
+
+/* SECRET IMAGE CARDS */
+/* ✅ MODAL STYLES */
+/* 📌 Ensure modal is hidden by default */
+/* ✅ Ensure modal is completely hidden when not used */
+.modal {
+    display: none; /* Sayfa yüklendiğinde kapalı olacak */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Modal açıldığında arka plan */
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* ✅ Prevent unwanted black overlay */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/* ✅ Modal İçindeki Görselin Düzgün Merkezlenmesi */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ❌ Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Kapatma butonu varsayılan olarak gizli */
+}
+
+/* ✅ Ensure images in modal are properly centered */
+#modal-image {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* ✅ Modal açıkken X butonu gözükür */
+.modal.show .close {
+    display: block;
+}
+
+/* 📌 Galeri Grid Tasarımı */
+.gallery-container {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 📌 3x3 Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    justify-content: center;
+}
+
+/* 📌 Kart Tasarımı */
+.secret-image-cards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 📌 Kart İçindeki Görsellerin Doğru Görüntülenmesi */
+.secret-card-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Resmin bozulmasını engeller */
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 📌 Sayfalama Tasarımı */
+.pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(134,57,185,255);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.pagination a:hover {
+    background-color: rgba(90,40,140,255);
+}
+
+/* Yükleme alanı */
+.upload-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Dikey hizalama */
+    gap: 15px;  /* Buton ve input arasında boşluk */
+}
+
+/* Dosya Seç input'unun görünümünü güzelleştirme */
+.upload-label {
+    background-color: rgba(134,57,185,255);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.upload-label:hover {
+    background-color: rgba(90,40,140,255);
+}
+
+/* Gerçek input gizleniyor */
+#file-input {
+    display: none;
+}
+
+/* Yükleme butonu */
+.upload-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    background-color: rgba(134,57,185,255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: rgba(90,40,140,255);
+}
+
+/* SECRET IMAGE CARDS */
+
+
+/* MODAL AYARLARI */
+.modal {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Arkaplan siyah & opak */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Büyük Resim */
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* Kapatma Butonu */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+
+
+
+
+
+/* Store */
+/* Sayfanın tamamını kapsayan container */
+.store-container {
+    display: flex;
+    justify-content: center; /* Yatay merkezleme */
+    align-items: center; /* Dikey merkezleme */
+    height: 100vh; /* Sayfanın tamamını kaplasın */
+}
+
+/* Ürünlerin olduğu grid */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 ürün yan yana */
+    gap: 90px;
+    max-width: 800px;
+}
+
+/* Ürün kartları */
+.store-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Ürün ismi */
+.product-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Resim kutusu */
+.store-image-cards {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Resimler */
+.store-image-cards img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Satın Al Butonu */
+button {
+    background-color: rgba(134,80,236,255);
+    border: none;
+    padding: 8px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+
+/* Küçük ekranlarda 2 ürün, mobilde 1 ürün */
+@media (max-width: 768px) {
+    .store-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .store-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* Store  */
+
+
+
+/* === QUIZ SAYFASI === */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Sayfanın ortasına hizalama */
+    padding: 20px;
+    width: 100%;
+    min-height: 100vh; /* Sayfanın tamamını kaplasın */
+}
+/* Formu tam ortalamak için */
+.quiz-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Quiz Başlığı */
+.quiz-title {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Açıklama Metni */
+.quiz-description {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Soruları Çerçeve İçine Alma */
+.quiz-question-container {
+    background: rgba(255, 255, 255, 0.1); /* Hafif saydam beyaz arka plan */
+    border: 2px solid rgba(134, 57, 185, 255); /* Mor border */
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Soruları tam ortaya al */
+}
+
+/* Sorular */
+.quiz-question {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Seçenekleri Yatay Hale Getirme */
+.quiz-options {
+    font-family: 'ArcadeClassic', sans-serif;
+    display: flex;
+    justify-content: center; /* Tam ortala */
+    gap: 20px;
+    flex-wrap: wrap; /* Mobil için satır kaymasını sağlar */
+    width: 100%;
+}
+
+/* Seçenek Butonları */
+.quiz-options label {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Seçenekleri tam ortala */
+    gap: 8px;
+    font-size: 1.2rem;
+    background-color: rgba(134, 57, 185, 0.8);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 180px; /* Seçenekler eşit genişlikte olacak */
+    text-align: center;
+}
+
+/* Input Gizleme */
+.quiz-options input {
+    transform: scale(1.2);
+}
+
+/* Seçenek Üzerine Gelme Efekti */
+.quiz-options label:hover {
+    background-color: rgba(255, 102, 153, 0.8);
+}
+
+/* Gönder Butonu - Tam Ortada */
+.quiz-submit-container {
+    display: flex;
+    justify-content: center; /* Ortala */
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.quiz-submit {
+    font-family: 'ArcadeClassic', sans-serif;
+    background-color: rgba(134, 57, 185, 255);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.quiz-submit:hover {
+    background-color: white;
+    color: rgba(134, 57, 185, 255);
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .quiz-title {
+        font-size: 2rem;
+    }
+
+    .quiz-description {
+        font-size: 1rem;
+    }
+
+    .quiz-question {
+        font-size: 1.2rem;
+    }
+
+    .quiz-options {
+        flex-direction: column; /* Küçük ekranlarda dikey hale gelir */
+        align-items: center;
+    }
+
+    .quiz-options label {
+        font-size: 1rem;
+        padding: 8px 15px;
+        width: 100%; /* Küçük ekranlarda tam genişlik */
+    }
+
+    .quiz-submit {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* === Result Page Styling === */
+.result-container {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;  /* Vertically center */
+    height: 100vh;  /* Full viewport height */
+}
+
+/* Result Box */
+.result-box {
+    background: rgba(255, 255, 255, 0.1);  /* Slightly transparent */
+    border: 2px solid rgba(134, 57, 185, 255);  /* Purple border */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;  /* Prevents it from getting too large */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.result-title {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Text */
+.result-text {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Home Button */
+.result-button {
+    font-family: 'ArcadeClassic', sans-serif;
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: rgba(134, 57, 185, 255);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.result-button:hover {
+    background-color: white;
+    color: rgba(134, 57, 185, 255);
+}
+
+
+
+
+
+
+
+
+/* Rock-Paper-Scissors */
+/* RPS GAME CONTAINER */
+/* RPS GAME CONTAINER */
+.rps-header {
+    margin-top: 5%;
+    text-align: center;
+}
+
+/* Main container, centers everything */
+.rps-container {
+    display: flex;
+    justify-content: center; /* Centers the player and bot sections */
+    gap: 200px; /* Increases space between the two */
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* PLAYER & BOT SECTIONS */
+.rps-player-section,
+.rps-bot-section {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ Ensures everything is centered */
+}
+
+/* CHOICE DISPLAY (Images with ? Before Selection) */
+.rps-choice-display {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(134,57,185,255);
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+    margin-top: 10px; /* ✅ Adds spacing between the text and image */
+}
+
+/* CHOICE IMAGES */
+.rps-choice-display img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* BUTTONS AND BETTING SECTION */
+.rps-bet-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rps-bet-section input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 200px;
+    background-color: rgba(134,57,185,0);
+    color: black;
+}
+
+/* BUTTONS */
+.rps-choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.rps-bet-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgba(134,57,185,255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rps-bet-button:hover {
+    background-color: white;
+    color: rgba(134,57,185,255);
+}
+
+/* RESULT SECTION */
+.rps-result-section {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* SLOT */
+
+/* Slot Machine Container */
+.slot-header{
+    margin-top: 5%;
+}
+.slot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual Slot Reel */
+.slot-reel {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slot Images */
+.slot-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Spin Button */
+.slot-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.slot-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: rgba(134,57,185,255);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slot-button:hover {
+    background-color: white;
+    color: rgba(134,57,185,255);
+}
+
+/* Result Message */
+.slot-result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Slot Betting Section */
+.slot-bet-section {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.slot-bet-section input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 200px;
+    background-color: rgba(134,57,185,0);
+    color: black;
+    text-align: center;
+}
+
+/* SLOT */
+
+
+
+
+/* PRODUCT */
+/* Product List Styling */
+.product-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Centers vertically */
+    padding-top: 20px;
+}
+
+.product-table {
+    width: 80%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.product-table th, .product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: rgba(134, 57, 185, 0.8);
+    color: white;
+    text-transform: uppercase;
+}
+
+.product-table tr:hover {
+    background-color: rgba(134, 57, 185, 0.1);
+}
+
+.product-table td a {
+    text-decoration: none;
+    color: rgba(134, 57, 185, 0.9);
+    font-weight: bold;
+}
+
+.product-table td a:hover {
+    text-decoration: underline;
+    color: rgba(134, 57, 185, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-table {
+        width: 100%;
+    }
+}
+
+/* Centering the product list */
+.product-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding-top: 20px;
+}
+
+.product-table {
+    width: 80%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-table th, .product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: rgba(134, 57, 185, 0.8);
+    color: white;
+    text-transform: uppercase;
+}
+
+.product-table tr:hover {
+    background-color: rgba(134, 57, 185, 0.1);
+}
+
+/* Buttons */
+.delete-button {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-button:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* New Product Button */
+.new-product-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.new-product-button {
+    display: inline-block;
+    background-color: rgba(134, 57, 185, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.new-product-button:hover {
+    background-color: rgba(134, 57, 185, 1);
+}
+
+/* Form Styles */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.new-product-form {
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-product-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.new-product-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(134, 57, 185, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgba(134, 57, 185, 1);
+}
+
+
+/* PRODUCT */

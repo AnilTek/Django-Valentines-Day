@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="baccarat-header pixel-text" style="color:black; text-align: center;">Yeni URUN</h1>
+
+<div class="form-container pixel-text">
+    <form method="POST" class="new-product-form" style= "font-size:16px; color:black;">
+        {% csrf_token %}
+        <label>Urun Ismi</label>
+        <input type="text" name="product_name" required>
+
+        <label>Urun Tipi</label>
+        <input type="text" name="product_type">
+
+        <label>Urun Fiyati</label>
+        <input type="number" name="product_price" required>
+
+        <label>Urun Linki</label>
+        <input type="url" name="product_link">
+
+        <button type="submit" class="submit-button">💾 Urunu Kaydet</button>
+    </form>
+</div>
+
+{% endblock content %}

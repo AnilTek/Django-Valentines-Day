@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% if product.product_type %}
+<div class="password-container d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 70px;">
+    <div class="password-box text-center">
+        <h2 class = "pixel-text" style = "color:white;">Gorsel Galeriye Eklendi</h2>
+        <br>
+    </div>
+</div>
+
+
+{% else %}
+<div class="password-container d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 70px;">
+    <div class="password-box text-center">
+        <h2 class = "pixel-text" style = "color:white;">HEDIYE KODUN</h2>
+        <p style = "color:black; font-size:20px;" class = "pixel-text" >{{product.code}}</p>
+        <br>
+        <p>! Remember this code</p>
+    </div>
+</div>
+{% endif %}
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="rps-header pixel-text" style="color:black; text-align: center;">Rock Paper Scissors</h1>
+
+<!-- Game Container -->
+<div class="rps-container">
+    <div class="rps-player-section pixel-text" style="color:black;">
+        <h2>Your Choice</h2>
+        <div id="player-choice" class="rps-choice-display">
+            <img src="{% static 'images/question_mark.png' %}" class="rps-img">
+        </div>
+    </div>
+
+    <div class="rps-bot-section pixel-text" style="color:black;">
+        <h2>Bot's Choice</h2>
+        <div id="bot-choice" class="rps-choice-display">
+            <img src="{% static 'images/question_mark.png' %}" class="rps-img">
+        </div>
+    </div>
+</div>
+
+<!-- Betting Section -->
+<div class="rps-bet-section">
+    <input class="pixel-text" id="bet" type="number" placeholder="Enter Bet" min="1">
+</div>
+
+<!-- Choice Buttons -->
+<div class="rps-choice-buttons">
+    <button class="rps-bet-button pixel-text" value="rock">👊 Rock</button>
+    <button class="rps-bet-button pixel-text" value="paper">✋ Paper</button>
+    <button class="rps-bet-button pixel-text" value="scissors">✌️ Scissors</button>
+</div>
+
+<!-- Result Display -->
+<div id="result-section" class="rps-result-section pixel-text" style="display: none; color:black;">
+    <h3 id="game-result"></h3>
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="{% static 'js/rps.js' %}"></script>
+{% endblock javascript %}

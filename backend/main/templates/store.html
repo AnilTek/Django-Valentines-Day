@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+<form action="{% url 'store' %}" method="POST">
+    {% csrf_token %}
+    <div class="store-container">
+        <div class="store-grid">
+            {% for object in store %}
+                {% if not object.achived %}
+                    <div class="store-item">
+                        <p style = "font-size:20px; color:rgba(134,80,236,255);"class="product-name pixel-text">{{ object.product_name }}</p>
+                        <div class="store-image-cards">
+                            <img src="{% static 'images/pixel_gift_1.png' %}" alt="">
+                        </div>
+                        <button style ="font-size:14px; color:#ffcc00;"class="pixel-text" type="submit" name="product_id" value="{{ object.id }}">
+                        {{ object.product_price }} 🪙
+                        </button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<h1 class="slot-header pixel-text" style="color:black; text-align: center;">🎰 Slot Makinesi 🎰</h1>
+
+<!-- Gold Display -->
+<div class="gold-container">
+    <p hidden class="pixel-text">💰 Gold: <span id="gold-display">{{ gold }}</span></p>
+</div>
+
+<!-- Slot Machine Container -->
+<div class="slot-container">
+    <div class="slot-reel" id="reel1"><img src="{% static 'images/question_mark.png' %}" class="slot-img"></div>
+    <div class="slot-reel" id="reel2"><img src="{% static 'images/question_mark.png' %}" class="slot-img"></div>
+    <div class="slot-reel" id="reel3"><img src="{% static 'images/question_mark.png' %}" class="slot-img"></div>
+</div>
+
+<!-- Bet Input Section -->
+<div class="slot-bet-section">
+    <label for="bet-amount" class="pixel-text"></label>
+    <input id="bet-amount" class="pixel-text" type="number" placeholder="Enter bet" min="1" style="color:black;">
+</div>
+
+<!-- Spin Button -->
+<div class="slot-controls">
+    <button id="spin-button" class="slot-button pixel-text">🎲 Spin</button>
+</div>
+
+<!-- Result Message -->
+<div id="slot-result" class="slot-result pixel-text"></div>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="{% static 'js/slot.js' %}" defer></script> <!-- ✅ Script loads after HTML -->
+{% endblock javascript %}

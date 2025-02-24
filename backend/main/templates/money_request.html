@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="{% url 'money_req'%}" method = 'POST'>
+    {% csrf_token %}
+<div class="password-container d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 70px;">
+    <div class="password-box text-center">
+        <h2 class = "pixel-text" style = "color:white;">BAKIYE YUKLE</h2>
+        
+        <br>
+        <input type="text" class="password-input form-control" placeholder="KOD..." name="money_code" required>
+        <button class="submit-btn btn btn-primary mt-3">ONAYLA</button>
+        <br>
+        <p class="pixel-text" style="font-size:15px; color:white; ">! CONDITION </p>
+    </div>
+</div>
+</form>
+
+
+
+{% endblock content %}

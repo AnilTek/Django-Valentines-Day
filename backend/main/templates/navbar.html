@@ -1,0 +1,19 @@
+{% load static %}
+
+<nav class="navbar custom-navbar fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="left-section">
+            <img src="{% static 'images/faye.jpg' %}" width="60" height="60" class="profile-img" alt="Profil">
+            <span id="gold-display" class="gold-amount pixel-text">{{ gold }}🟡</span>
+        </div>
+
+        <ul class="navbar-list">
+            <li><a href="{% url 'store' %}" class="nav-item-link">Magaza</a></li>
+            <li><a href="{% url 'gamble' %}" class="nav-item-link">Sans Oyunları</a></li>
+            <li><a href="{% url 'pref' %}" class="nav-item-link">Tercihler</a></li>
+            <li><a href="{% url 'help' %}" class="nav-item-link">Yardim</a></li>
+            <li><a href="{% url 'secret_entrance' %}" class="nav-item-link">
+            <img src="{% static 'images/angel_icon.png' %}" width="60" height="60" class="profile-img-devil" alt="Profil"></a></li>
+        </ul>
+    </div>
+</nav>

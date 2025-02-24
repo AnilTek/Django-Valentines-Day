@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<form action="{% url 'decide_for_me' %}" method="POST">
+    {% csrf_token %}
+    <div class="coinflip-wrapper">
+        <div class="decide-container">
+            <div class="decide-inputs-section">
+                <div class="decide-input-container">
+                    <label style = "font-size: 30px ; color:black ;" class = 'pixel-text' for="option1" class="decide-label">Karar 1</label>
+                    <input type="text" id="option1" name="option1" class="decide-input pixel-text" required>
+                </div>
+                <div class="decide-coin {% if result %} {{ result }}-animation {% endif %}" id="coin">
+                    <div class="coin-face">
+                        <img src="{% static 'images/heads.svg' %}" alt="Heads" id="coin-image">
+                    </div>
+                </div>
+                <div class="decide-input-container">
+                    <label style = "font-size: 30px ; color:black ;" class = 'pixel-text' for="option2" class="decide-label">Karar 2</label>
+                    <input type="text" id="option2" name="option2" class="decide-input pixel-text" required>
+                </div>
+            </div>
+            <div class="decide-button-section">
+                <button style = "font-size: 40px ;"  type="submit" class="decide-button pixel-text">Karar ver</button>
+            </div>
+        </div>
+
+        {% if chosen_option %}
+            <div class="decide-result">
+                <h3 style = "font-size: 30px ; color: black" class = 'pixel-text' >Karar: {{ chosen_option }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</form>
+
+
+
+{% endblock content %}

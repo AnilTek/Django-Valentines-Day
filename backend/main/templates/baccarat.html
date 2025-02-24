@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<h1 class="baccarat-header pixel-text" style="color:black; text-align: center;">Baccarat Game</h1>
+
+<div class="baccarat-container">
+    <div  style = 'color:black;' class="baccarat-player-section pixel-text">
+        <h2>Player</h2>
+        <div id="player-cards" class="baccarat-cards"></div>
+    </div>
+
+    <div style = 'color:black;' class="baccarat-banker-section pixel-text">
+        <h2>Banker</h2>
+        <div id="banker-cards" class="baccarat-cards"></div>
+    </div>
+</div>
+
+<div class="baccarat-bet-buttons">
+    <button id="player-bet" class="baccarat-bet-button pixel-text">Player</button>
+    <button id="tie-bet" class="baccarat-bet-button pixel-text">Tie</button>
+    <button id="banker-bet" class="baccarat-bet-button pixel-text">Bank</button>
+</div>
+
+<div class="baccarat-bet-section">
+    <input class = "pixel-text" id="bet" type="number" placeholder="Bahis girin" min="1">
+</div>
+
+<div id="result-section" class="baccarat-result-section pixel-text" style="display:none; color:black;">
+    <h3 style ="color:black;"id="game-result"></h3>
+</div>
+{% endblock content %}
+
+
+{% block javascript %}
+<script src="{% static 'js/baccarat.js' %}"></script>
+{% endblock javascript %}

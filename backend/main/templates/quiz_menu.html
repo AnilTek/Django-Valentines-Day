@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="button-container">
+        {% for quiz in quiz_objects  %}
+        {% if quiz.status == False %}
+        <div class="pixel-button-wrapper">
+            <a href="{% url 'quiz' quiz.id %}">
+            <button class="pixel-button">{{quiz.title}}</button>
+            <img src="{% static 'images/nerd_icon.png' %}" alt="Kafa" class="hover-head">
+        </div>
+        {% else %}
+
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'ArcadeClassic', sans-serif;
+        background-color: #1f2029;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    /* Navbardan etkilenmemesi için içerik sarmalayıcı */
+    .content-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 70px;
+    }
+
+    /* Buton Stili */
+    .pixel-button-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .pixel-button {
+        font-size: 1.5rem;
+        background-color: #fcacf5;
+        color: black;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .pixel-button:hover {
+        background-color: #ff6699;
+        transform: scale(1.1);
+    }
+
+    /* Karakter Kafasının Başlangıç Pozisyonu */
+    .hover-head {
+        position: absolute;
+        bottom: 78%; /* Tam butonun altında */
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        width: 60px;
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    /* Hover'da kafanın yukarı çıkması */
+    .pixel-button-wrapper:hover .hover-head {
+        transform: translateX(-50%) translateY(-20px); /* Yukarı doğru hareket */
+        opacity: 1;
+    }
+</style>
+{% endblock content %}
+
+

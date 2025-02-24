@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="baccarat-header pixel-text" style="color:black; text-align: center;">Urunler</h1>
+<!-- Product Table -->
+<div class="product-table-container pixel-text" style= "font-size:16px;">
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Type</th>
+                <th>Product Price</th>
+                <th>Product Link</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.product_type }}</td>
+                <td>{{ product.product_price }} 🟡</td>
+                <td><a href="{{ product.product_link }}" target="_blank" class="product-link">View Product</a></td>
+                <td>
+                    <a href="{% url 'delete_product' product.id %}" class="delete-button">🗑️ Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="new-product-container">
+    <a href="{% url 'new_product' %}" class="new-product-button pixel-text" style= "font-size:16px;">➕ Yeni Urun Ekle</a>
+</div>
+
+
+{% endblock content %}
+
+
+
+
+

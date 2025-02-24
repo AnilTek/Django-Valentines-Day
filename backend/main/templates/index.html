@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'index'%}" method = 'POST'>
+    {% csrf_token %}
+<div class="password-container d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 70px;">
+    <div class="password-box text-center">
+        <h2 class = "pixel-text" style = "color:white;">USER</h2>
+        <br>
+        <input type="password" class="password-input form-control" placeholder="Parola" name="password" required>
+        <button class="submit-btn btn btn-primary mt-3">Login</button>
+    </div>
+</div>
+</form>
+{% endblock %}
+
+

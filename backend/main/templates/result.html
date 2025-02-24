@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="result-container">
+    <div class="result-box">
+        <h2 class="result-title">Sonuçlar</h2>
+        
+        <p class="result-text">🟡 Kazanilan Ödül: <strong>{{ prize }}</strong></p>
+        <p class="result-text">✅ Dogru Sayisi: <strong>{{ how_many_correct }}</strong></p>
+
+        <a href="{% url 'quiz_menu' %}" class="result-button">Quiz Menusune Dön</a>
+    </div>
+</div>
+
+<script>
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
+{% endblock content %}

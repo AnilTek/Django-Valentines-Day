@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<form id="fight-form" action="{% url 'fight_view' %}" method="POST">
+    {% csrf_token %}
+    <div class="game-container">
+        <h1>Basit Dövüş Oyunu</h1>
+
+        <div class="player-moves">
+            <button type="button" class="move-button" data-move="attack">Attack</button>
+            <button type="button" class="move-button" data-move="defend">Defend</button>
+            <button type="button" class="move-button" data-move="heal">Heal</button>
+        </div>
+
+        <div class="fight-animation" id="animation-section" style="display: none;">
+            <p>Fight in progress...</p>
+            <div class="animation-placeholder">[Animasyon Alanı]</div>
+        </div>
+
+        <div id="result-section" >
+            <h3 id="result-message"></h3>
+        </div>
+    </div>
+</form>
+
+<style>
+    .fight-animation {
+        text-align: center;
+        font-size: 20px;
+        color: #ff3333;
+    }
+    
+    .animation-placeholder {
+        width: 100px;
+        height: 100px;
+        background-color: #ffcc00;
+        animation: pulse 3s infinite;
+        margin: 10px auto;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            background-color: #ffcc00;
+        }
+        50% {
+            transform: scale(1.5);
+            background-color: #ff9933;
+        }
+        100% {
+            transform: scale(1);
+            background-color: #ffcc00;
+        }
+    }
+    
+</style>
+
+<script>
+    document.querySelectorAll(".move-button").forEach(button => {
+        button.addEventListener("click", function() {
+            let selectedMove = this.getAttribute("data-move");
+            let form = document.getElementById("fight-form");
+
+            // Hareketi POST isteğine ekle
+            let input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "move";
+            input.value = selectedMove;
+            form.appendChild(input);
+
+            // Animasyonu başlat
+            document.getElementById("animation-section").style.display = "block";
+            document.getElementById("result-section").style.display = "none";
+
+            // 3 saniye bekle, ardından formu gönder
+            setTimeout(() => {
+                form.submit();
+            }, 3000);  // 3 saniye animasyon süresi
+        });
+    });
+</script>
+{% endblock content %}

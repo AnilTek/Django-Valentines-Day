@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="gallery-container">
+    <div class="gallery-grid" id="gallery">
+        {% for photo in photos %}
+            <div class="secret-image-cards">
+                <img class="secret-card-image" src="{{ photo.image.url }}" alt="Avatar" onclick="openModal('{{ photo.image.url }}')">
+
+            </div>
+        {% endfor %}
+</div>
+
+<div id="image-modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-image">
+</div>
+
+
+    <!-- Sayfalama Kontrolleri -->
+    <div class="pagination">
+        {% if photos.has_previous %}
+            <a href="?page=1">⏮ İlk</a>
+            <a href="?page={{ photos.previous_page_number }}">⬅ Önceki</a>
+        {% endif %}
+
+        <span>Sayfa {{ photos.number }} / {{ photos.paginator.num_pages }}</span>
+
+        {% if photos.has_next %}
+            <a href="?page={{ photos.next_page_number }}">Sonraki ➡</a>
+            <a href="?page={{ photos.paginator.num_pages }}">Son ⏭</a>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Yükleme Formu -->
+<form id="upload-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="upload-container">
+        <!-- Dosya Seç Butonu -->
+        <label for="file-input" class="upload-label">📂 Dosya Seç</label>
+        <input type="file" id="file-input" name="images" multiple required>
+    
+        <!-- Yükleme Butonu -->
+        <button type="submit" class="upload-button">⬆ Yükle</button>
+    </div>
+    
+</form>
+
+{% endblock content %}
+
+{% block javascript %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("✅ Gallery script loaded.");
+    
+        // ✅ IMAGE UPLOAD FUNCTIONALITY
+        document.getElementById("upload-form").addEventListener("submit", function (event) {
+            event.preventDefault();  
+        
+            let formData = new FormData(this);
+        
+            fetch("{% url 'upload' %}", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                let contentType = response.headers.get("content-type");
+                if (!contentType || !contentType.includes("application/json")) {
+                    return response.text().then(text => { throw new Error("Server returned HTML: " + text); });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    alert("Hata: " + data.error);
+                } else {
+                    alert(data.message);  
+                    location.reload();  // Yeni yüklenen fotoğrafları görmek için sayfayı yenile
+                }
+            })
+            .catch(error => {
+                console.error("Hata:", error);
+                alert("Yükleme sırasında bir hata oluştu! Ayrıntılar için konsolu kontrol et.");
+            });
+        });
+    
+        // ✅ Ensure all images open the modal on click
+        document.querySelectorAll(".secret-card-image").forEach(image => {
+            image.addEventListener("click", function () {
+                openModal(this.src);
+            });
+        });
+    
+        // ✅ MODAL FUNCTIONS
+        function openModal(imageUrl) {
+            let modal = document.getElementById("image-modal");
+            let modalImage = document.getElementById("modal-image");
+    
+            if (!modal || !modalImage) {
+                console.error("❌ Modal or Image Element not found!");
+                return;
+            }
+    
+            modal.classList.remove("hidden"); // **Siyah overlay çıkmasını engellemek için CSS ile kontrol et**
+            modal.style.display = "flex";
+            modalImage.src = imageUrl;
+        }
+    
+        function closeModal() {
+            let modal = document.getElementById("image-modal");
+            if (modal) {
+                modal.classList.add("hidden"); // Modal tamamen kapanır, overlay oluşmaz
+                modal.style.display = "none";
+            }
+        }
+    
+        // ✅ Close modal when clicking outside of the image
+        window.onclick = function (event) {
+            let modal = document.getElementById("image-modal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    
+        // ✅ Close button functionality
+        document.querySelector(".close").addEventListener("click", closeModal);
+    
+        // ✅ Fix black overlay when changing pages
+        document.querySelectorAll(".pagination a").forEach(button => {
+            button.addEventListener("click", function () {
+                closeModal(); 
+            });
+        });
+    });
+    
+    
+
+</script>
+{% endblock javascript %}
