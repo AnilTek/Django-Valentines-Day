@@ -46,5 +46,4 @@ http://127.0.0.1:8000/admin/
 Log in with the superuser credentials to access the host/admin panel.
 
 ---
-
-🚀 **Your customized Django project is now ready!**
+![Image](https://github.com/user-attachments/assets/5cacf47b-3c63-42fa-b280-0e823996384e)
