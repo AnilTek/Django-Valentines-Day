@@ -1,7 +1,4 @@
-# 📌 Short Django Project Setup Guide
-
-This is a simple Django-based project that allows users to modify templates, configure authentication settings, and customize quiz data.
-
+# 📌 Short Django-Valentines-Day Project Setup Guide
 ---
 
 ## 🚀 Installation
